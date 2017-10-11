@@ -1,15 +1,15 @@
-#Lab 1: Introduction to C, Git, and the MSP430.
+# Lab 1: Introduction to C, Git, and the MSP430.
 
-##Math Library:
+## Math Library:
 The math library for the MSP430 series is equivocal.
 
-##Dependencies:
+## Dependencies:
 The library and functions are dependent on the header file (.h) 
 
-##Usage:
+## Usage:
 Once both the header file and source file are included in the same project, you need to call the "Math" function to perform any operations. Math(x, y, operator)
 
-##Valid Inputs:
+## Valid Inputs:
 ```c
 uint16 x, y;
 ```
@@ -39,5 +39,5 @@ x will be divided by y and quotient will be returned.
 Example: Math(4 ,2, /)
 Returns 2
 
-##Known Errors:
+## Known Errors:
 The return value cannot be signed, so it will be unclear whether the answer is positive or negative.
