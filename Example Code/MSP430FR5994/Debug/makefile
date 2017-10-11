@@ -10,9 +10,11 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./msp430g2xx3_uscia0_uart_01_9600.obj" \
-"../lnk_msp430g2553.cmd" \
+"./msp430fr599x_euscia0_uart_01.obj" \
+"../lnk_msp430fr5994.cmd" \
 $(GEN_CMDS__FLAG) \
+-llibmpu_init.a \
+-llibmath.a \
 -llibc.a \
 
 -include ../makefile.init
@@ -120,41 +122,41 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-msp430g2xx3_uscia0_uart_01_9600.c.out \
+msp430fr599x_euscia0_uart_01.c.out \
 
 EXE_OUTPUTS__QUOTED += \
-"msp430g2xx3_uscia0_uart_01_9600.c.out" \
+"msp430fr599x_euscia0_uart_01.c.out" \
 
 BIN_OUTPUTS += \
-msp430g2xx3_uscia0_uart_01_9600.c.hex \
+msp430fr599x_euscia0_uart_01.c.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"msp430g2xx3_uscia0_uart_01_9600.c.hex" \
+"msp430fr599x_euscia0_uart_01.c.hex" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "msp430g2xx3_uscia0_uart_01_9600.c.out"
+	@$(MAKE) --no-print-directory -Onone "msp430fr599x_euscia0_uart_01.c.out"
 
 # Tool invocations
-msp430g2xx3_uscia0_uart_01_9600.c.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+msp430fr599x_euscia0_uart_01.c.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MSP430 Linker'
-	"C:/Users/Marc/Desktop/Code Composer Studio/ccsv7/tools/compiler/ti-cgt-msp430_16.9.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"msp430g2xx3_uscia0_uart_01_9600.c.map" --heap_size=80 --stack_size=80 -i"C:/Users/Marc/Desktop/Code Composer Studio/ccsv7/ccs_base/msp430/include" -i"C:/Users/Marc/Desktop/Code Composer Studio/ccsv7/tools/compiler/ti-cgt-msp430_16.9.3.LTS/lib" -i"C:/Users/Marc/Desktop/Code Composer Studio/ccsv7/tools/compiler/ti-cgt-msp430_16.9.3.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="msp430g2xx3_uscia0_uart_01_9600.c_linkInfo.xml" --use_hw_mpy=none --rom_model -o "msp430g2xx3_uscia0_uart_01_9600.c.out" $(ORDERED_OBJS)
+	"C:/Users/Marc/Desktop/Code Composer Studio/ccsv7/tools/compiler/ti-cgt-msp430_16.9.3.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --advice:hw_config=all --define=__MSP430FR5994__ --define=_MPU_ENABLE -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU40 -z -m"msp430fr599x_euscia0_uart_01.c.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/Users/Marc/Desktop/Code Composer Studio/ccsv7/ccs_base/msp430/include" -i"C:/Users/Marc/Desktop/Code Composer Studio/ccsv7/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/Users/Marc/Desktop/Code Composer Studio/ccsv7/ccs_base/msp430/lib/FR59xx" -i"C:/Users/Marc/Desktop/Code Composer Studio/ccsv7/tools/compiler/ti-cgt-msp430_16.9.3.LTS/lib" -i"C:/Users/Marc/Desktop/Code Composer Studio/ccsv7/tools/compiler/ti-cgt-msp430_16.9.3.LTS/include" --priority --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="msp430fr599x_euscia0_uart_01.c_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "msp430fr599x_euscia0_uart_01.c.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-msp430g2xx3_uscia0_uart_01_9600.c.hex: $(EXE_OUTPUTS)
+msp430fr599x_euscia0_uart_01.c.hex: $(EXE_OUTPUTS)
 	@echo 'Invoking: MSP430 Hex Utility'
-	"C:/Users/Marc/Desktop/Code Composer Studio/ccsv7/tools/compiler/ti-cgt-msp430_16.9.3.LTS/bin/hex430" --memwidth=8 --romwidth=8 -o "msp430g2xx3_uscia0_uart_01_9600.c.hex" $(EXE_OUTPUTS__QUOTED)
+	"C:/Users/Marc/Desktop/Code Composer Studio/ccsv7/tools/compiler/ti-cgt-msp430_16.9.3.LTS/bin/hex430" --memwidth=8 --romwidth=8 -o "msp430fr599x_euscia0_uart_01.c.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "msp430g2xx3_uscia0_uart_01_9600.obj" 
-	-$(RM) "msp430g2xx3_uscia0_uart_01_9600.d" 
+	-$(RM) "msp430fr599x_euscia0_uart_01.obj" 
+	-$(RM) "msp430fr599x_euscia0_uart_01.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
