@@ -21,22 +21,34 @@ Any of (+,-,*,/,%) as characters. If anything that is not these is inserted, Mat
 Functions:
 Add ('+')
 x will be added to y and sum will be returned.
-Example: Math(4, 2, +)
+Example: 
+```c
+Math(4, 2, +)
+```
 Returns 6
 
 Subtract ('-')
 x will be subtracted from y and answer will be returned.
-Example: Math(4, 2, -)
+Example: 
+```c
+Math(4, 2, -)
+```
 Returns 2
 
 Multiply ('*')
 x will be multiplied by y and product will be returned.
-Example: Math(4, 2, *)
+Example: 
+```c
+Math(4, 2, *)
+```
 Returns 8
 
 Divide ('/')
 x will be divided by y and quotient will be returned.
-Example: Math(4 ,2, /)
+Example: 
+```c
+Math(4 ,2, /)
+```
 Returns 2
 
 ## Known Errors:
